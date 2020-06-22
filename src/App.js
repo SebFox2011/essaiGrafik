@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Exemple from './Exemple.jsx'
-import {LogginForm, Boiling, Calculator, Essai} from './LogginForm.jsx'
+import {Exemple} from './Exemple.jsx'
+import {LogginForm, Calculator, Essai} from './LogginForm.jsx'
 
 function App() {
 

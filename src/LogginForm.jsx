@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { Button } from './ui/Button'
 
-export function Boiling({ celsius }, children) {
-
-    const [isBoiling, setBoiling] = useState(null)
+function Boiling({ celsius }, children) {
+    console.log('render Boiling')
+    //const [isBoiling, setBoiling] = useState(null)
     if (celsius>90) {
         return <div className='alert alert-danger mt-4'>'ca boue' </div>
     }
@@ -20,7 +20,7 @@ export class Essai extends React.Component  {
         super(props)
         this.state = {
             essai: 1,
-            fonction: console.log('essai')
+            //fonction: console.log('essai')
         }
     }
 
