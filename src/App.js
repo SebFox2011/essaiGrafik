@@ -1,15 +1,13 @@
-import React from 'react'
+// eslint-disable-next-line
+import React, { useState }  from 'react'
 
-import {Exemple} from './Exemple.jsx'
-import {LogginForm, Calculator, Essai} from './LogginForm.jsx'
+import {Essai} from './Essai.jsx'
 
 function App() {
 
   return <div>
-    <Exemple/>
-    <LogginForm/>
-    <Calculator/>
-    <Essai/>
+    <Essai />
+
   </div>
 
 }

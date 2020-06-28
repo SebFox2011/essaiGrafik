@@ -12,75 +12,7 @@ function Boiling({ celsius }, children) {
     }
 }
 
-export function Essai() {
 
-    const tabs = [{id:1,nom:'Sébastien',prenom:'Philippe'}, 
-    {id:2, nom: 'Claire', prenom:'Martin'}, 
-    {id:3,nom:'Francois' , prenom: 'Lefort'}, 
-    {id:4,nom:'gerard' , prenom: 'gris'}, 
-    {id:5,nom:'antoinette' , prenom: 'morein'}]
-
-    const [name,setName] = useState({
-        id:0,
-        nom:'nom',
-        prenom:'prenom'
-    })
-
-    function litNomPrenom (id)  {
-        let tab= []
-        tabs.forEach(element => {         
-            if (element.id === parseInt(id)){
-                tab.push(element.nom)
-                tab.push(element.prenom)
-                return tab
-            }
-        })
-        return tab
-    }
-
-    const handleChange = event => {
-        event.persist()
-        const [nom,prenom]= litNomPrenom(event.target.value)
-        setName(state => {return {...state,id:event.target.value,nom:nom,prenom:prenom} })
-    }
-
-    const handleChangeName = event => {
-        event.persist()
-        const name = event.target.value
-        setName(state => {return {...state,nom:''} })
-        setName(state => {return {...state,nom:name}})
-    }
-
-    return <div className="container">
-        <div className="row align-items-end">
-            <div className="col-sm">
-                <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                        <label className="input-group-text" htmfor="inputGroupSelect01">Options</label>
-                    </div>
-                    <select className="custom-select" id="inputGroupSelect01" onChange={handleChange}>
-                        <option>Choose ...</option>
-                        {tabs.map((tab, index) => <option key={index} value={tab.id}>{tab.id}</option>)}
-                    </select>
-                </div>
-            </div>
-            <div className="col-sm">
-                <div className='form-group'>
-                    <label htmlFor='nom'>Nom</label>
-                    <input type='text' name='username' className='form-control' onChange={handleChangeName} value={name.nom} />
-                </div>
-            </div>
-            <div className="col-sm">
-                <div className='form-group'>
-                    <label htmlFor='prenom'>Prenom</label>
-                    <input type='text' name='username' className='form-control' readOnly value={name.prenom}/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-}
 
 export function Calculator() {
     const [temperature, setTemperature] = useState('')
