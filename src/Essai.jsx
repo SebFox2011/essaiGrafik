@@ -92,7 +92,7 @@ function Adresse(props) {
         <div className="col-sm">
             <div className='form-group'>
                 <label htmlFor='adresse'>Adresse</label>
-                <input type='text' name='adress' className='form-control' readOnly value={adress || 'null'}></input>
+                <input type='text' name='adress' className='form-control' readOnly value={adress || 'adresse'}></input>
             </div>
         </div>
     </div>
