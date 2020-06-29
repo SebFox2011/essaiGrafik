@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import React, { useState }  from 'react'
 
-import {Essai} from './Essai.jsx'
+import {Formulaire} from './Formulaire.jsx'
 
 function App() {
 
   return <div>
-    <Essai />
+    <Formulaire />
 
   </div>
 

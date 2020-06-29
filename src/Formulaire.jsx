@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import React, { useState } from 'react'
 
-export function Essai() {
-    const tabs = [{ id: 1, nom: 'Sébastien', prenom: 'Philippe' },
-    { id: 2, nom: 'Claire', prenom: 'Martin', adresse: 'adresse1' },
-    { id: 3, nom: 'Francois', prenom: 'Lefort', adresse: 'adresse2' },
-    { id: 4, nom: 'gerard', prenom: 'gris', adresse: 'adresse3' },
-    { id: 5, nom: 'antoinette', prenom: 'morein', adresse: 'adresse4' }]
+export function Formulaire() {
+    const tabs = [{ id: 0, nom: 'Sébastien', prenom: 'Philippe', adresse: 'adresse0' },
+    { id: 1, nom: 'Claire', prenom: 'Martin', adresse: 'adresse1' },
+    { id: 2, nom: 'Francois', prenom: 'Lefort', adresse: 'adresse2' },
+    { id: 3, nom: 'gerard', prenom: 'gris', adresse: 'adresse3' },
+    { id: 4, nom: 'antoinette', prenom: 'morein', adresse: 'adresse4' }]
 
     const [idTab, setIdTab] = useState(0)
 
@@ -45,9 +45,12 @@ function Nom(props) {
     const handleChange = event => {
         event.persist()
         const id =event.target.value
-        props.onIdChange(id) 
-        const [nom, prenom] = litNomPrenom(id)
-        setName(state => { return { ...state, id: id, nom: nom, prenom: prenom } })
+        if (id >= 0) {
+            props.onIdChange(id) 
+            const [nom, prenom] = litNomPrenom(id)
+            setName(state => { return { ...state, id: id, nom: nom, prenom: prenom } })
+        }
+        
         
     }
 
@@ -64,7 +67,7 @@ function Nom(props) {
                     <label className="input-group-text" htmfor="inputGroupSelect01">Options</label>
                 </div>
                 <select className="custom-select" id="inputGroupSelect01" onChange={handleChange}>
-                <option>Choose ...</option>
+                <option selected disabled='true'>Choose ...</option>
                     {tabs && tabs.map((tab, index) => <option key={index} value={tab.id}>{tab.id}</option>)}
                 </select>
             </div>
